@@ -8,6 +8,13 @@ A small web tool that lets you upload a **Pokémon Emerald (US)** ROM and downlo
 ## Quick start
 
 ```bash
+./setup.sh
+source .venv/bin/activate
+python app.py
+```
+
+The setup script creates a virtual environment and installs all dependencies automatically.
+
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
