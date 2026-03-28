@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Emerald Pokédex Extractor</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; max-width: 720px; }
+      .card { border: 1px solid #ddd; border-radius: 10px; padding: 1.25rem; }
+      .error { color: #b00020; margin-bottom: 1rem; }
+      button { margin-top: 1rem; padding: 0.6rem 1rem; font-size: 1rem; }
+      .note { color: #555; font-size: 0.95rem; }
+    </style>
+  </head>
+  <body>
+    <h1>Pokémon Emerald Pokédex Extractor</h1>
+    <div class="card">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <p class="{{ category }}">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form method="post" action="/extract" enctype="multipart/form-data">
+        <label for="rom">Upload Pokémon Emerald ROM (.gba)</label><br />
+        <input type="file" id="rom" name="rom" accept=".gba" required />
+        <br />
+        <button type="submit">Extract names + sprites</button>
+      </form>
+      <p class="note">
+        The download is a ZIP containing <code>names.csv</code> and one PNG sprite per species.
+        Currently this supports only Pokémon Emerald (US, game code <code>BPEE</code>).
+      </p>
+    </div>
+  </body>
+</html>
