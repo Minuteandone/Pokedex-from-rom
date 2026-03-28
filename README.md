@@ -7,8 +7,7 @@ A small web tool that lets you upload a **Pokémon Emerald (US)** ROM and downlo
 
 ## Quick start
 
-### macOS / Linux (bash)
-
+<<
 ```bash
 ./setup.sh
 source .venv/bin/activate
@@ -24,6 +23,14 @@ python app.py
 ```
 
 The setup scripts create a virtual environment and install all dependencies automatically.
+
+The setup script creates a virtual environment and installs all dependencies automatically.
+
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python app.py
+```
 
 Then open <http://127.0.0.1:5000>, upload your `.gba`, and download the generated ZIP.
 
