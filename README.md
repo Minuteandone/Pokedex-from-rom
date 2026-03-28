@@ -7,11 +7,22 @@ A small web tool that lets you upload a **Pokémon Emerald (US)** ROM and downlo
 
 ## Quick start
 
+<<
 ```bash
 ./setup.sh
 source .venv/bin/activate
 python app.py
 ```
+
+### Windows (PowerShell)
+
+```powershell
+.\setup.ps1
+.\.venv\Scripts\Activate.ps1
+python app.py
+```
+
+The setup scripts create a virtual environment and install all dependencies automatically.
 
 The setup script creates a virtual environment and installs all dependencies automatically.
 
